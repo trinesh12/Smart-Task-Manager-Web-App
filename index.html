@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Manager</title>
+    <!-- Import Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with Date, Time, and Stats -->
+        <header>
+            <div class="date-time-container">
+                <h1 id="current-date">Loading date...</h1>
+                <p id="current-time">Loading time...</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-label">Total Tasks</span>
+                    <span id="total-tasks" class="stat-value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Completed</span>
+                    <span id="completed-tasks" class="stat-value">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Input Section -->
+        <section class="input-section">
+            <input type="text" id="task-input" placeholder="What needs to be done?">
+            
+            <div class="input-controls">
+                <select id="category-select">
+                    <option value="Personal">Personal</option>
+                    <option value="Study">Study</option>
+                    <option value="Work">Work</option>
+                </select>
+                
+                <select id="priority-select">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium">Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+                
+                <button id="add-btn">Add Task</button>
+            </div>
+        </section>
+
+        <!-- Filters and Clear Button -->
+        <section class="filters-section">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="Pending">Pending</button>
+                <button class="filter-btn" data-filter="Completed">Completed</button>
+            </div>
+            <button id="clear-completed-btn" class="clear-btn">Clear Completed</button>
+        </section>
+
+        <!-- Task List -->
+        <main>
+            <div id="empty-message" class="empty-message hidden">
+                <p>No tasks available. Add a task to get started!</p>
+            </div>
+            <ul id="task-list" class="task-list">
+                <!-- Tasks will be injected here by JavaScript -->
+            </ul>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
